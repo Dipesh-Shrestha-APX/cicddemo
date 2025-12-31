@@ -36,4 +36,4 @@ jobs:
 
       - name: "Deploy the code to my server"
         run: |
-          ssh -t ec2-user@SERVER_IP -i myKey.pem 'cd /usr/share/nginx/html && git pull origin main'
+          ssh -t ec2-user@$SERVER_IP -i myKey.pem 'cd /usr/share/nginx/html && git pull origin main'
