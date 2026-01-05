@@ -1,10 +1,11 @@
 name: Update index.html in my nginx server inside the ec2 server
 
 #This is the trigger
-on: 
-  push:
-    branches:
-      - main
+on:
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - main
 
 #This is the actions to perform on those trigger
 jobs:
@@ -17,7 +18,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4 #it allows the actions in runner to chekout my code
         # with:
-          # fetch-depth: 0 #Don't skip anything while fetching my code to the runner
+        # fetch-depth: 0 #Don't skip anything while fetching my code to the runner
       - name: "Configure SSH"
         run: |
           mkdir -p ~/.ssh 
